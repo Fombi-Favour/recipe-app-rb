@@ -53,6 +53,7 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
+  gem 'capybara', '~> 3.40'
   gem 'debug', platforms: %i[mri windows]
   gem 'rails-controller-testing', '~> 1.0'
   gem 'rspec-rails', '~> 5.0'
