@@ -1,5 +1,5 @@
 class Inventory < ApplicationRecord
-  belongs_to :user, class_name: 'User'
+  belongs_to :user
+  has_many :inventory_foods, foreign_key: :inventory_id, dependent: :destroy
 
-  has_many :inventory_foods, foreign_key: :inventory_id
 end

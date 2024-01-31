@@ -24,20 +24,22 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_155034) do
 
   create_table "inventories", force: :cascade do |t|
     t.string "name"
+    t.text "description"
+    t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_inventories_on_user_id"
   end
 
   create_table "inventory_foods", force: :cascade do |t|
-    t.integer "quantity"
-    t.bigint "inventories_id"
-    t.bigint "foods_id"
+    t.bigint "quantity"
+    t.bigint "inventory_id", null: false
+    t.bigint "food_id", null: false
+    t.integer "user"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["foods_id"], name: "index_inventory_foods_on_foods_id"
-    t.index ["inventories_id"], name: "index_inventory_foods_on_inventories_id"
+    t.index ["food_id"], name: "index_inventory_foods_on_food_id"
+    t.index ["inventory_id"], name: "index_inventory_foods_on_inventory_id"
   end
 
   create_table "recipe_foods", force: :cascade do |t|
@@ -69,8 +71,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_01_30_155034) do
   end
 
   add_foreign_key "inventories", "users"
-  add_foreign_key "inventory_foods", "foods", column: "foods_id"
-  add_foreign_key "inventory_foods", "inventories", column: "inventories_id"
+  add_foreign_key "inventory_foods", "foods"
+  add_foreign_key "inventory_foods", "inventories"
   add_foreign_key "recipe_foods", "foods"
   add_foreign_key "recipe_foods", "recipes"
   add_foreign_key "recipes", "users"
