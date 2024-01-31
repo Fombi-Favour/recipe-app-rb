@@ -3,7 +3,6 @@ class Recipe < ApplicationRecord
 
   has_many :recipe_foods, foreign_key: :recipe_id
 
-
   def total_price
     total = 0
     recipe_foods.each do |r_food|
