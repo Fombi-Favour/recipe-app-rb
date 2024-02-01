@@ -1,0 +1,45 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.main {
+  padding: 24px 16px;
+}
+
+.sub-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 16px;
+}
+
+.row {
+  border: 2px solid #2e2f30;
+  width: 45rem;
+  padding: 8px 18px;
+  display: flex;
+  align-items: center;
+  gap: 8.012rem;
+}
+
+.row1 {
+  width: 28rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 4px;
+}
+
+.row1 .btn-remove {
+  background: transparent;
+  border: none;
+  text-decoration: underline;
+  text-transform: uppercase;
+  color: #326de0;
+  font-weight: 600;
+  cursor: pointer;
+}
