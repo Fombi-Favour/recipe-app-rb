@@ -1,17 +1,20 @@
 <div class="main">
-  <h2>Recipies</h2>
-
+  <h2>Recipes</h2>
   <%= button_tag 'add recipe', class: "btn-add" %>
 
-  <!---- general recipe list ----->
   <div class="sub-main">
-    <!---- individual recipe ----->
-    <div class="row">
-      <div class="row1">
-        <h3>Recipe 1</h3>
-        <%= button_tag 'remove', class: "btn-remove" %>
-      </div>
-      <span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla dignissim massa non ante laoreet, non porta mi efficitur. Donec dictum urna libero, nec pharetra orci pulvinar vitae. Aenean non accumsan sapien. Ut non justo felis. Mauris dapibus nulla eros, eget consequat quam fringilla eu. Mauris ac sapien quis felis aliquam auctor. Suspendisse justo felis, dapibus et venenatis non, mattis ac magna. Praesent quis ante id dui viverra egestas.</span>
-    </div>
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe.id) do %>
+        <div class="row">
+          <div class="row1">
+            <h3> <%= recipe.name %> </h3>
+            <%= button_tag 'remove', class: "btn-remove" %>
+          </div>
+          <span>
+            <%= recipe.description %>
+          </span>
+        </div>
+      <%end%>
+    <%end%>
   </div>
 </div>
