@@ -7,3 +7,19 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+first_user = User.create(name: 'Tom')
+second_user = User.create(name: 'Lilly')
+
+tomato = Food.create(name: 'Tomato',measurement_unit: 'g' , price: 2)
+potato = Food.create(name: 'Potato',measurement_unit: 'g' , price: 2)
+apple = Food.create(name: 'Apple',measurement_unit: 'g' , price: 3)
+
+
+
+pure = Recipe.create(name: 'pure',preparation_time: 0.5,cooking_time: 20, description: 'Pure de papa', public: true,user: first_user)
+soap = Recipe.create(name: 'soap',preparation_time: 0.5,cooking_time: 30, description: 'Sopa de tomate', public: true,user: second_user)
+
+rf2 = RecipeFood.create(quantity:200,recipe_id: soap.id,food_id:tomato.id)
+rf1 = RecipeFood.create(quantity:400,recipe_id: pure.id,food_id:potato.id)
+soap2 = Recipe.create(name: 'soap potato',preparation_time: 0.5,cooking_time: 30, description: 'Sopa de papa', public: false,user: second_user)
