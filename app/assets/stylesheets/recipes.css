@@ -9,6 +9,35 @@
   padding: 24px 16px;
 }
 
+.main h2 {
+  text-align: center;
+}
+
+.header-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 16px;
+}
+
+.header-btn a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 9.023rem;
+  height: 2.054rem;
+  border: 2px solid #666;
+  border-radius: 12px;
+  background: transparent;
+  text-decoration: none;
+  color: #2e2f30;
+  text-transform: capitalize;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.02rem;
+  cursor: pointer;
+}
+
 .sub-main {
   display: flex;
   flex-direction: column;
@@ -54,6 +83,90 @@
   color: #326de0;
   font-weight: 600;
   cursor: pointer;
+}
+
+/* modal file */
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 50;
+  overflow-y: auto;
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.sub-modal {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+}
+
+.content {
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  max-width: 40rem;
+  min-width: 600px;
+  border-radius: 1rem;
+  background: #dadada;
+  margin: 0.25rem;
+  padding: 2rem;
+}
+
+.sub-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 5px;
+  padding: 12px 0;
+}
+
+.field input {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 14px;
+  padding: 0 12px;
+}
+
+.field textarea {
+  width: 300px;
+  height: 50px;
+  outline: none;
+  border-radius: 14px;
+  padding: 4px 12px;
+  resize: none;
+}
+
+.cancel-button,
+.btn-close {
+  background-color: #1530ff;
+  color: white;
+  padding: 4px 8px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  text-decoration: none;
+}
+
+.cancel-button {
+  width: 100px;
+  height: 24px;
+  font-size: 16px;
+  text-align: center;
+}
+
+.cancel-button:hover {
+  background-color: #2640fe;
 }
 
 /* recipe/show.html.erb file */
