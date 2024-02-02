@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-   root "recipe#public_index"
+   root "recipes#index"
 
-  resources :recipe, only: [:public_index, :show] do 
+  resources :recipe, only: [:public_index, :show] do
     member do
       patch :toggle_public
       get 'modal'
