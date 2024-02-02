@@ -7,16 +7,16 @@ class RecipeController < ApplicationController
     @recipe = Recipe.find(params[:id])
   end
 
-  def modal 
+  def modal
     @recipe = Recipe.find(params[:id])
     @inventories = Inventory.all
   end
 
-  def shopping_list 
+  def shopping_list
     @recipe = Recipe.find(params[:id])
     @inventory = Inventory.find(params[:inventory_id])
   end
-  
+
   def destroy
     @recipe = Recipe.find(params[:id])
     authorize! :destroy, @recipe
