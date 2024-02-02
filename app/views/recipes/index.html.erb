@@ -1,6 +1,8 @@
 <div class="main">
   <h2>Recipes</h2>
-  <%= button_tag 'add recipe', class: "btn-add" %>
+  <div class="header-btn">
+    <%= link_to 'add recipe', new_recipe_path, data: { turbo_frame: "modal" } %>
+  </div>
 
   <div class="sub-main">
     <% @recipes.each do |recipe| %>
