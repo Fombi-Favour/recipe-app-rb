@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "modal" do %>
+  <div aria-labelledby="modal-title" aria-modal="true" role="dialog" class="modal">
+    <div class="sub-modal">
+      <div class="content">
+        <%= link_to "x", "", data: {
+          controller: "modals",
+          action: "modals#close"
+        }, class: "btn-close" %>
+        <div class="sub-content">
+          <h1>New Recipe</h1>
+          <%= render 'form', recipe: @recipes %>
+        </div>
+    </div>
+  </div>
+<%end%>

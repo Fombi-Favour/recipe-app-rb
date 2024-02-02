@@ -10,7 +10,6 @@ Rails.application.routes.draw do
     end
   end
 
-
-  get "/recipe/show" => 'recipe#show'
+  resources :recipes, only: [:index, :new, :create, :destroy, :show]
 end
 

@@ -1,0 +1,22 @@
+<div class="main">
+  <h2>Recipes</h2>
+  <div class="header-btn">
+    <%= link_to 'add recipe', new_recipe_path, data: { turbo_frame: "modal" } %>
+  </div>
+
+  <div class="sub-main">
+    <% @recipes.each do |recipe| %>
+      <%= link_to recipe_path(recipe.id) do %>
+        <div class="row">
+          <div class="row1">
+            <h3> <%= recipe.name %> </h3>
+            <%= button_tag 'remove', class: "btn-remove" %>
+          </div>
+          <span>
+            <%= recipe.description %>
+          </span>
+        </div>
+      <%end%>
+    <%end%>
+  </div>
+</div>

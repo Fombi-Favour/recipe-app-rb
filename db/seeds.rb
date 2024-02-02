@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 first_user = User.create(name: 'Tom')
 second_user = User.create(name: 'Lilly')
 
@@ -25,6 +26,7 @@ rf3 = RecipeFood.create(quantity:200,recipe_id: soap.id,food_id:tomato.id)
 rf2 = RecipeFood.create(quantity:50,recipe_id: pure.id,food_id: milk.id)
 rf1 = RecipeFood.create(quantity:400,recipe_id: pure.id,food_id:potato.id)
 soap2 = Recipe.create(name: 'soap potato',preparation_time: 0.5,cooking_time: 30, description: 'Sopa de papa', public: false,user: second_user)
+
 
 
 inv1 = Inventory.create(name: 'Inventory 1',description:'First inventory', user_id: first_user.id)
