@@ -23,3 +23,8 @@ soap = Recipe.create(name: 'soap',preparation_time: 0.5,cooking_time: 30, descri
 rf2 = RecipeFood.create(quantity:200,recipe_id: soap.id,food_id:tomato.id)
 rf1 = RecipeFood.create(quantity:400,recipe_id: pure.id,food_id:potato.id)
 soap2 = Recipe.create(name: 'soap potato',preparation_time: 0.5,cooking_time: 30, description: 'Sopa de papa', public: false,user: second_user)
+
+
+inv1 = Inventory.create(name: 'Inventory 1', user: first_user)
+inv2 = Inventory.create(name: 'Inventory 2', user: first_user)
+

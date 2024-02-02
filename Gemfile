@@ -1,11 +1,9 @@
 source 'https://rubygems.org'
 
-ruby '~> 3.2'
-
-gem 'rubocop', '>= 1.0', '< 2.0'
+ruby '3.3.0'
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
-gem 'rails', '~> 7.1.3'
+gem 'rails', '~> 7.1.2'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
@@ -32,7 +30,6 @@ gem 'devise'
 
 gem 'cancancan'
 
-
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -53,10 +50,11 @@ gem 'bootsnap', require: false
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
-  gem 'capybara', '~> 3.40'
+  gem 'bullet'
   gem 'debug', platforms: %i[mri windows]
-  gem 'rails-controller-testing', '~> 1.0'
-  gem 'rspec-rails', '~> 5.0'
+  gem 'factory_bot_rails'
+  gem 'rspec-rails'
+  gem 'shoulda-matchers'
 end
 
 group :development do
@@ -69,3 +67,13 @@ group :development do
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
 end
+
+group :test do
+  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
+  gem 'capybara'
+  gem 'rails-controller-testing'
+  gem 'selenium-webdriver'
+  gem 'webdrivers'
+end
+
+gem 'rubocop', '>= 1.0', '< 2.0'

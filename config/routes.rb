@@ -1,12 +1,15 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+   root "recipe#public_index"
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
-
-  # Defines the root path route ("/")
-  root "recipes#index"
+  resources :recipe, only: [:public_index, :show] do 
+    member do
+      patch :toggle_public
+      get 'modal'
+      
+      get '/shopping_list', to: 'recipe#shopping_list', as: 'shopping_list'
+    end
+  end
 
   resources :recipes, only: [:index, :new, :create, :destroy, :show]
 end
+
