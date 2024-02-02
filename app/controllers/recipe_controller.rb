@@ -27,7 +27,7 @@ class RecipeController < ApplicationController
       else
         quantity = 0
       end
-      next unless quantity.positive? 0
+      next unless quantity.positive?
 
       @shop_list << { name: rf.food.name, quantity:, measurement_unit: rf.food.measurement_unit, shop_price: }
     end
