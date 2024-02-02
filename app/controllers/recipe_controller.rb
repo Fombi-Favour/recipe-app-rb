@@ -29,10 +29,7 @@ class RecipeController < ApplicationController
       end
       next unless quantity.positive? 0
 
-      @shop_list << {
-        name: rf.food.name, quantity:,
-        measurement_unit: rf.food.measurement_unit, shop_price:
-      }
+      @shop_list << { name: rf.food.name, quantity:, measurement_unit: rf.food.measurement_unit, shop_price: }
     end
     @amount = @shop_list.count
     @total_price = @shop_list.sum { |item| item[:shop_price] }
