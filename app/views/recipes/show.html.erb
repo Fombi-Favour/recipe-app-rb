@@ -1,0 +1,11 @@
+<div>
+  <h2> <%= @recipes.name %> </h2>
+  <div>
+    <div>
+      <span>Preparation time: <%= @recipes.preparation_time %> hours </span>
+      <span>Cooking time: <%= @recipes.cooking_time %> minutes </span>
+    </div>
+    <%= render partial: 'public_recipe', locals: { recipe: @recipes } %>
+  </div>
+  <span> <%= @recipes.description %> </span>
+</div>

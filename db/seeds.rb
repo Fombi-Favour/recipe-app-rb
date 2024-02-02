@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 first_user = User.create(name: 'Tom')
 second_user = User.create(name: 'Lilly')
 
@@ -26,3 +27,4 @@ soap2 = Recipe.create(name: 'soap potato',preparation_time: 0.5,cooking_time: 30
 
 inv1 = Inventory.create(name: 'Inventory 1', user: first_user)
 inv2 = Inventory.create(name: 'Inventory 2', user: first_user)
+

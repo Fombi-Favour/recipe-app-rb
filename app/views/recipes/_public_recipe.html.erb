@@ -1,0 +1,11 @@
+<%= form_with model: recipe, url: recipes_path do |form| %>
+  <div>
+    <% if !recipe.public %>
+      <%= form.check_box :public, role: "switch" %>
+      <%= form.label :public %>
+    <% else %>
+      <%= form.check_box :public, role: "switch" %>
+      <%= form.label :public %>
+    <%end%>
+  </div>
+<%end%>
