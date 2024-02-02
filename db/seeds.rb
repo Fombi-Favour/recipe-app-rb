@@ -26,3 +26,6 @@ soap2 = Recipe.create(name: 'soap potato',preparation_time: 0.5,cooking_time: 30
 
 inv1 = Inventory.create(name: 'Inventory 1', user: first_user)
 inv2 = Inventory.create(name: 'Inventory 2', user: first_user)
+
+if1 = InventoryFood.create(quantity: 100,inventories_id: inv1.id,foods_id: tomato.id)
+if2 = InventoryFood.create(quantity: 20,inventories_id: inv1.id,foods_id: potato.id)
