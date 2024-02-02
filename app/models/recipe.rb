@@ -3,6 +3,8 @@ class Recipe < ApplicationRecord
 
   has_many :recipe_foods, foreign_key: :recipe_id
 
+  validates :name, :preparation_time, :cooking_time, :description, presence: true
+
   def total_price
     total = 0
     recipe_foods.each do |r_food|
