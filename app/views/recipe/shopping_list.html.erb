@@ -2,11 +2,11 @@
     <h1>Shopping List</h1>
     <div class='sl-description'>
         <div class='sl-d-label'>
-            <h3>Amount of food to buy: </h3>
+            <h3>Amount of food to buy: <%=@amount %> </h3>
             <h3>Recipe: <%=@recipe.name %> </h3>
         </div>
         <div class='sl-d-label'>
-        <h3>Total value of food needes: </h3>
+        <h3>Total value of food needes: <%= @total_price%> </h3>
         <h3>Inventory: <%=@inventory.name %> </h3>
         </div>
     </div>
