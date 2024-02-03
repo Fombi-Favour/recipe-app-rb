@@ -5,26 +5,26 @@ class RecipesController < ApplicationController
     @recipes = Recipe.all
   end
 
-  def show
-    @recipes = Recipe.find(params[:id])
+  def new
+    @recipe = Recipe.new
   end
 
-  def new
-    @recipes = Recipe.new
+  def show
+    @recipe = Recipe.find(params[:id])
   end
 
   def create
-    @recipes = Recipe.new(recipe_params)
-    if @recipes.save
+    @recipe = Recipe.new(recipe_params)
+    if @recipe.save
       redirect_to recipes_path, notice: 'Recipe was successfully created'
     else
-      render :new, notice: 'Recipe was not created'
+      redirect_to new_recipe_path, notice: 'Recipe was not created'
     end
   end
 
   private
 
   def recipe_params
-    params.require(:recipes).permit(:name, :preparation_time, :cooking_time, :description, :public)
+    params.require(:recipe).permit(:name, :preparation_time, :cooking_time, :description)
   end
 end
