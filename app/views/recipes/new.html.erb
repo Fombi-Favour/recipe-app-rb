@@ -1,15 +1,34 @@
-<%= turbo_frame_tag "modal" do %>
-  <div aria-labelledby="modal-title" aria-modal="true" role="dialog" class="modal">
-    <div class="sub-modal">
-      <div class="content">
-        <%= link_to "x", "", data: {
-          controller: "modals",
-          action: "modals#close"
-        }, class: "btn-close" %>
-        <div class="sub-content">
-          <h1>New Recipe</h1>
-          <%= render 'form', recipe: @recipes %>
-        </div>
+<div class="modal">
+  <h1>New Recipe</h1>
+
+  <!---- the form ----->
+  <%= form_with model: @recipe do |form| %>
+    <div class="field">
+      <%= form.label :name %>
+      <%= form.text_field :name %>
     </div>
-  </div>
-<%end%>
+
+    <div class="field">
+      <%= form.label :preparation_time, 'Preparation time (in hours)' %>
+      <%= form.number_field :preparation_time %>
+    </div>
+
+    <div class="field">
+      <%= form.label :cooking_time, 'Cooking time (in minutes)' %>
+      <%= form.number_field :cooking_time %>
+    </div>
+
+    <div class="check-field">
+      <%= form.label :public %>
+      <%= form.check_box :public %>
+    </div>
+
+    <div class="field">
+      <%= form.label :description %>
+      <%= form.text_area :description %>
+    </div>
+
+    <%= form.submit "Create recipe", disable_with: "please wait...", class: "btn-submit" %>
+  <%end%>
+  <!---- end of form ----->
+</div>
