@@ -11,6 +11,8 @@
   </head>
 
   <body>
+<%= render partial: "layouts/navbar" %>
+
   <% if user_signed_in? %>
   <%= button_to "LogOut", destroy_user_session_path, method: :delete %>
 <% end %>
