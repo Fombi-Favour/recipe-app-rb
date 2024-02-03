@@ -10,4 +10,6 @@ class Recipe < ApplicationRecord
     end
     total
   end
+
+  scope :public_recipes, -> { where(public: true) }
 end
