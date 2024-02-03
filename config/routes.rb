@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
+  
    root "recipe#public_index"
 
   resources :recipe, only: [:public_index, :show] do 
