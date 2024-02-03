@@ -10,7 +10,7 @@ class InventoriesController < ApplicationController
   end
 
   def create
-    @inventory = current_user.inventories.new(inventory_params)
+    @inventory =Inventory.new(inventory_params)
 
     respond_to do |format|
       if @inventory.save
