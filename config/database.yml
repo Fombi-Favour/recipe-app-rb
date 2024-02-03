@@ -2,7 +2,7 @@ default: &default
   adapter: postgresql
   encoding: unicode
   user: postgres
-  password: losojosverdes4
+  password: brainboxz7
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
@@ -12,14 +12,14 @@ development:
   database: recipe_app_rb_development
   database adapter: postgresql
   user: postgres
-  password: losojosverdes4
+  password: brainboxz7
 
 test:
   <<: *default
   database: recipe_app_rb_test
   database adapter: postgresql
   user: postgres
-  password: losojosverdes4
+  password: brainboxz7
 
 production:
   <<: *default
